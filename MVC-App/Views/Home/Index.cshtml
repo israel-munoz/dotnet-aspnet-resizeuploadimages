@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="@Url.Content("~/css/index.css")" />
+</head>
+<body>
+    <form method="post" action="@Url.Action("Index", "Home")" enctype="multipart/form-data">
+        <div>
+            <label>
+                <input type="radio" name="save" value="disk" />
+                Guardar imagen en disco
+            </label>
+            <label>
+                <input type="radio" name="save" value="db" />
+                Guardar imagen en base de datos
+            </label>
+        </div>
+        <div>
+            <label>
+                Seleccionar una imagen
+                <input type="file" name="file-uploader" />
+            </label>
+        </div>
+        <div>
+            <button type="submit" name="upload-image" value="1">
+                Cargar imagen
+            </button>
+        </div>
+        <div class="message">
+            @ViewBag.Message
+        </div>
+    </form>
+</body>
+</html>
